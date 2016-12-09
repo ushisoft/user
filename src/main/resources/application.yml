@@ -8,4 +8,4 @@ spring:
 
   rabbitmq:
     host: localhost
-    port: 32769
+    port: 5672
