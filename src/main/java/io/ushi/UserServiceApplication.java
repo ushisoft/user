@@ -20,6 +20,9 @@ public class UserServiceApplication {
     @Value("${config.name}")
     String name = "World";
 
+    @Value("${config.password}")
+    String password = "letmein";
+
     @RequestMapping("/")
     public String home() {
         return "Hello " + env.getProperty("config.name");
@@ -30,7 +33,12 @@ public class UserServiceApplication {
         return "Hello " + name;
     }
 
+    @RequestMapping("/pass")
+    public String pass() {
+        return "Password is " + password;
+    }
+
     public static void main(String[] args) {
-        SpringApplication.run(UserServiceApplication.class, args);
+        SpringApplication.run(UserServiceApplication.class, args); //NOSONAR
     }
 }
