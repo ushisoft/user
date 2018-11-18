@@ -1,5 +1,12 @@
+server:
+  servlet:
+    context-path: /user
 spring:
   application:
     name: user
-  profiles:
-    active: qa
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      profile: dev
